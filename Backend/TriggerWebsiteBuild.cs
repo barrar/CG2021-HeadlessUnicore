@@ -1,3 +1,4 @@
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System;
@@ -18,6 +19,8 @@ namespace CG2021
             builder.AddNotificationHandler<ContentMovedNotification, WebsiteRebuilder>();
             builder.AddNotificationHandler<ContentPublishedNotification, WebsiteRebuilder>();
             builder.AddNotificationHandler<ContentUnpublishedNotification, WebsiteRebuilder>();
+
+            builder.Services.AddOptions<Cg2021Options>().Bind(builder.Config.GetSection("CG2021"));
         }
 
         public class Cg2021Options
