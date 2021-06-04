@@ -9,6 +9,7 @@
         <g-link class="nav__link" to="/about/">About</g-link>
       </nav>
     </header>
+    <h1>{{ $context._name }}</h1>
     <slot/>
   </div>
 </template>
