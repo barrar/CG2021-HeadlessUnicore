@@ -10,7 +10,7 @@ module.exports = {
   plugins: [{
     use: '@gridsome/source-graphql',
     options: {
-      url: 'https://cg2021-headless-unicore.azurewebsites.net/umbraco/graphql',
+      url: process.env.GRIDSOME_API_BACKEND_URL + '/umbraco/graphql',
       fieldName: 'cms',
       typeName: ''
     }

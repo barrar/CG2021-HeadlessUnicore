@@ -31,10 +31,9 @@ module.exports = function (api) {
         umbraco {
           content {
             byType {
-              home { items { _id _level _name _sortOrder _template _url title showInMenu content { content { ... on cms_BannerImagePublishedElement { title breakBeforeSection image { ... on cms_ImagePublishedMedia { umbracoFile } } } ... on cms_TextBlockPublishedElement { title breakBeforeSection content } } } } }
-              contentPage { items { _id _level _name _sortOrder _template _url title showInMenu content { content { ... on cms_BannerImagePublishedElement { title breakBeforeSection image { ... on cms_ImagePublishedMedia { umbracoFile } } } ... on cms_TextBlockPublishedElement { title breakBeforeSection content } } } } }
+              home { items { _id _level _name _sortOrder _template _url title showInMenu content { contentUdi content { ... on cms_BannerImagePublishedElement { _contentType { alias } title breakBeforeSection image { ... on cms_ImagePublishedMedia { _name _url } } } ... on cms_TextBlockPublishedElement { _contentType { alias } title breakBeforeSection content } } } } }
+              contentPage { items { _id _level _name _sortOrder _template _url title showInMenu content { contentUdi content { ... on cms_BannerImagePublishedElement { _contentType { alias } title breakBeforeSection image { ... on cms_ImagePublishedMedia { _name _url } } } ... on cms_TextBlockPublishedElement { _contentType { alias } title breakBeforeSection content } } } } }
               search { items { _id _level _name _sortOrder _template _url title showInMenu foundResultsHeader noResultsHeader } }
-              siteSettings { items { searchPage { _url } } }
             }
           }
         }

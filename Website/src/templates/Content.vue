@@ -1,11 +1,10 @@
 <template>
-    <layout>
-    </layout>
+    <content-page>
+    </content-page>
 </template>
 
 <script>
 export default {
-    
 }
 </script>
 
