@@ -56,7 +56,7 @@ namespace CG2021
                 {
                     using (var client = new WebClient())
                     {
-                        var result = client.DownloadString(_options.Value.FrontEndBuildHook);
+                        var result = client.UploadString(_options.Value.FrontEndBuildHook, "");
                         _logger.LogInformation("Rebuild website triggered with a result of " + result);
                     }
                 }
