@@ -3,15 +3,15 @@ The Backend and Website source code is from https://github.com/benjaminc/CG2021-
 The `CG2021-HeadlessUnicore` project is a headless instance of Umbraco 9 paired with GraphQL and a Gridsome static site generator.    
 
 ## Running the project
-1. Run `docker-compose up` in the root directory.    
-    The `umbraco` container will take 2-5 minutes to start, you can view the log for details.
-2. Run `npm install` from the Website directory
-3. Run `npx gridsome develop` from the Website directory
+1. Run `docker-compose up` in the root directory.     
+    The `umbraco` container will take 2-5 minutes to start, you can view the log for details.    
+2. Run `npm install` from the Website directory    
+3. Run `npx gridsome develop` from the Website directory    
 
-`http://localhost:8080/` - Access the static site
+`http://localhost:8080/` - Access the static site    
 `http://localhost:8001/umbraco` - Access the Umbraco Backoffice    
-`http://localhost:8001/umbraco/graphql` - Access the GraphQL Playground
-MSSQL can be accessed at `localhost,8002` with username `sa` and password `Password123`
+`http://localhost:8001/umbraco/graphql` - Access the GraphQL Playground    
+MSSQL can be accessed at `localhost,8002` with username `sa` and password `Password123`    
 
 ### Umbraco Backoffice login
 `contact@proworks.com`  
