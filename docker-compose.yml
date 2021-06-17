@@ -1,0 +1,36 @@
+services:
+  umbraco-db:
+    container_name: umbraco-mssql
+    hostname: umbraco-mssql
+    image: mcr.microsoft.com/mssql/server:2019-CU11-ubuntu-20.04
+    env_file: ./.env
+    # volumes:
+      # - umbraco-mssql:/var/opt/mssql/data
+    restart: always
+    ports:
+      - '8002:1433'
+
+  umbraco:
+    container_name: umbraco
+    hostname: umbraco
+    image: mcr.microsoft.com/dotnet/sdk:5.0-focal
+    env_file: ./.env
+    volumes:
+      - ./Backend:/Backend/
+      - ./umbraco-mssql-init.sh:/init.sh
+      - ./CG2021.bacpac:/CG2021.bacpac
+    restart: always
+    ports:
+      - '8001:8001'
+    command: >
+      sh -c "
+      cd /Backend/
+      && dotnet nuget add source 'https://www.myget.org/F/umbracoprereleases/api/v3/index.json'
+      && dotnet build
+      && chmod +x /init.sh
+      && /init.sh
+      && dotnet run --urls=http://+:8001/
+      "
+
+# volumes:
+#   umbraco-mssql:

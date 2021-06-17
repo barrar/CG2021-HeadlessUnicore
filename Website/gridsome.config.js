@@ -6,7 +6,7 @@
 
 module.exports = {
   siteName: 'CodeGarden2021 Headless Unicore',
-  siteUrl: 'https://cg2021-headless-unicore.azurewebsites.net',
+  siteUrl: 'http://localhost:8080',
   plugins: [{
     use: '@gridsome/source-graphql',
     options: {
